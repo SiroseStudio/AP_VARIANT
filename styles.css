@@ -34,8 +34,8 @@ model-viewer {
   display: flex;
   justify-content: center;
   gap: 20px;
-  padding: 15px;
-  background-color: #eaecf686; /* Couleur de fond avec transparence */
+  padding: 20px;
+  background-color: #eaecf6; /* Couleur de fond avec transparence */
   border-radius: 10px; /* Bordures arrondies */
   position: absolute;
   bottom : 10px; /* Positionnement en haut du viewer */
