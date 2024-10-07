@@ -12,11 +12,12 @@
     <model-viewer id="ap-watch" src="GLTF_AP_RO_Skeleton.glb" ar ar-modes="webxr scene-viewer quick-look" preload camera-controls tone-mapping="neutral" poster="LOGO_AP.png"
       poster="poster.webp" shadow-intensity="0" environment-image="brown_photostudio_02_2k_BW.hdr" exposure="1.8" camera-target="0m 0m 0m" camera-orbit="-20deg 90deg 5m" field-of-view="25deg"
       exposure="1.5" shadow-softness="1" alt="Audemars Piguet Royal Oak Double Balancier OpenWork" min-camera-orbit="auto auto 3m" min-field-of-view="5deg" max-field-of-view="12deg">
+      </div>
     </model-viewer>  
 
     <!-- Color/Variant Selection -->
     <div class="colors">
-      <div id="variant" class="variant-container hide">
+      <div id="variant" class="variant-container">
         <!-- Boutons des variantes -->
         <button class="color-button" style="background-color: #000000;" data-variant="ROSE_GOLD"></button>
         <button class="color-button" style="background-color: #e7a591;" data-variant="BLACK"></button>
@@ -27,12 +28,6 @@
     <!-- Script to handle color variants -->
     <script type="module">
       const modelViewer = document.querySelector("#ap-watch");
-      const variantContainer = document.querySelector('.variant-container');
-
-      // Event listener to show buttons once the model is loaded
-      modelViewer.addEventListener('load', () => {
-        variantContainer.classList.remove('hide'); // Show the variant buttons
-      });
 
       // Event listener to switch between color variants
       document.getElementById('variant').addEventListener('click', (event) => {
