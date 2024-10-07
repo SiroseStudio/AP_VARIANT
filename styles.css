@@ -41,7 +41,7 @@ model-viewer {
 }
 
 .update-bar {
-  background-color: rgba(29, 29, 29, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
   width: 0%;
   height: 100%;
   border-radius: 25px;
@@ -49,20 +49,36 @@ model-viewer {
   transition: width 0.3s;
 }
 
+/* Container for the viewer and buttons */
+.viewer-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Positioning the color buttons on top of the viewer */
+.variant-container {
+  position: absolute;
+  bottom: 10px;  /* Ajuste la distance par rapport au haut du viewer */
+  right: 690px; /* Positionne les boutons à droite */
+  display: flex;
+  gap: 10px; /* Espacement entre les boutons */
+}
+
+/* Style des boutons de couleur */
 .color-button {
-  padding: 10px 20px;
-  margin: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #eaecf6 ;
   cursor: pointer;
-  border: 1px solid #333;
-  background-color: #f0f0f0;
-  border-radius: 5px;
 }
 
 .color-button:hover {
-  background-color: #ddd;
+  opacity: 1;
+  border: 3px solid #3b3b3b ; /* Changement de bordure au survol */
 }
 
-.color-button.selected {
-  background-color: #333;
-  color: white;
-}
+
+

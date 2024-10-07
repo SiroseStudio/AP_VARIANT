@@ -1,22 +1,46 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>&lt;model-viewer&gt; template</title>
+    <title>Model Viewer Template</title>
     <meta charset="utf-8">
-    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="description" content="Model Viewer with Variants">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" href="./styles.css" rel="stylesheet"/>
   </head>
   <body>
-    <!-- <model-viewer> HTML element -->
-    <model-viewer src="GLTF_AP_RO_Skeleton.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="0" environment-image="brown_photostudio_02_2k_BW.hdr" exposure="1.5" shadow-softness="1">
+    <!-- Model Viewer HTML element -->
+    <model-viewer id="ap-watch" src="GLTF_AP_RO_Skeleton.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" 
+      poster="poster.webp" shadow-intensity="0" environment-image="brown_photostudio_02_2k_BW.hdr" 
+      exposure="1.5" shadow-softness="1" alt="Audemars Piguet Royal Oak Watch">
       <div class="progress-bar hide" slot="progress-bar">
           <div class="update-bar"></div>
       </div>
     </model-viewer>  
-    <script src="script.js"></script>
-    <!-- Loads <model-viewer> for browsers: -->
+
+    <!-- Color/Variant Selection -->
+    <div class="colors">
+      <div id="variant" class="variant-container">
+        <!-- Boutons des variantes -->
+        <button class="color-button" style="background-color: #000000;" data-variant="ROSE_GOLD"></button>
+        <button class="color-button" style="background-color: #e7a591;" data-variant="BLACK"></button>
+        <button class="color-button" style="background-color: #C0C0C0;" data-variant="ARGENT"></button>
+      </div>
+    </div>
+
+    <!-- Script to handle color variants -->
+    <script type="module">
+      const modelViewer = document.querySelector("#ap-watch");
+
+      // Event listener to switch between color variants
+      document.getElementById('variant').addEventListener('click', (event) => {
+        if (event.target.tagName === 'BUTTON') {
+          const selectedVariant = event.target.getAttribute('data-variant');
+          modelViewer.variantName = selectedVariant;  // Change to selected variant
+        }
+      });
+    </script>
+
+    <!-- Loads model-viewer for browsers -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
   </body>
- </script>
 </html>
