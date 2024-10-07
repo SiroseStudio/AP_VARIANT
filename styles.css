@@ -63,7 +63,7 @@ model-viewer {
   justify-content: center;
   gap: 20px;
   padding: 15px;
-  background-color: #eaecf6; /* Couleur de fond avec transparence */
+  background-color: #eaecf686; /* Couleur de fond avec transparence */
   border-radius: 10px; /* Bordures arrondies */
   position: absolute;
   bottom : 10px; /* Positionnement en haut du viewer */
